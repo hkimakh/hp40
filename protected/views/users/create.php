@@ -1,0 +1,36 @@
+<?php
+/* @var $this UsersController */
+/* @var $model Users */
+
+$this->breadcrumbs=array(
+	'Users'=>array('index'),
+	'Create',
+);
+
+$this->menu=array(
+	array('label'=>'List Users', 'url'=>array('index')),
+	array('label'=>'Manage Users', 'url'=>array('admin')),
+	array('label'=>'Create Users', 'url'=>array('create')),
+	//array('label'=>'Update Users', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Delete Users', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+);
+?>
+
+
+<h1>Add Users</h1>
+<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+	
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'users-grid',
+	'itemsCssClass'=>'table table-stripped',
+	'dataProvider'=>$model->search(),
+	'filter'=>$model,
+	'columns'=>array(
+		'id',
+		'username',
+		'password',
+		array(
+			'class'=>'CButtonColumn',
+		),
+	),
+)); ?>

@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+#mainmenu{
+	
+	height:35px;
+}
+#mainmenu .user_menu{
+	float: right;
+	margin:0;
+	
+}
