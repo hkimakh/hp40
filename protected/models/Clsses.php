@@ -11,7 +11,6 @@
  *
  * The followings are the available model relations:
  * @property Students $student
- * @property Teachers $teacher
  */
 class Clsses extends CActiveRecord
 {
@@ -49,7 +48,7 @@ class Clsses extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'student' => array(self::BELONGS_TO, 'Students', 'studentID'),
-			'teacher' => array(self::BELONGS_TO, 'Teachers', 'teacherID'),
+			'clsses' => array(self::BELONGS_TO, 'teachers', 'teacherID'),
 		);
 	}
 
@@ -60,8 +59,8 @@ class Clsses extends CActiveRecord
 	{
 		return array(
 			'idclsses' => 'Idclsses',
-			'studentID' => 'Studentid',
-			'teacherID' => 'Teacherid',
+			'studentID' => 'Student',
+			'teacherID' => 'Teacher',
 			'ClassName' => 'Class Name',
 		);
 	}

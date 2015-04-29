@@ -130,9 +130,20 @@ class TeachersController extends Controller
 	 */
 	public function actionIndex()
 	{
-		
+
+		//$command = Yii::app()->db->createCommand($data);
+		//$result =  $command->query();
+		/*$data = Yii::app()->db->createCommand()
+				->select('*')
+				->from('teachers')
+				->join('clsses','teachers.idteachers = clsses.teacherID')
+				->queryAll();*/
+				
+				
+		 //$data = Teachers::model()->findAllBySql('SELECT * FROM teachers JOIN clsses ON clsses.teacherID=teachers.idteachers WHERE teacherID = idteachers');	//this how to git the data in relationship
+		$data = Teachers::model()->with('clsses')->findAll();
 		$model = Teachers::model()->findAll();
-		$this->render('index', array('model'=>$model)); 
+		$this->render('index', array('model'=>$model, 'data'=>$data)); 	
 		//$dataProvider=new CActiveDataProvider('Teachers');
 		//$this->render('index',array(
 			//'dataProvider'=>$dataProvider,

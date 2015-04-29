@@ -1,3 +1,21 @@
+<?php 
+
+
+foreach ($data as $value){	
+      echo"<h6>Firstname: " . $value->Firstname . "</h6>";
+     //echo"<h6>Firstname: " . $value->Lastname . "</h6>";
+      echo "<ul>";
+      foreach ($value->clsses as $class){
+      	echo "<li>" . $class->ClassName . "</li>";
+      }
+      echo"</ul>";
+}
+
+ //echo $data[0]->clsses[0]->ClassName;
+ exit();
+
+?>
+
 <style>
 <!--
    table, th, td{
@@ -17,17 +35,6 @@
 -->
 </style>
 
-
-<?php 
-  echo "<pre>";
-  print_r($model);
-  echo "</pre>";
-  echo exit();	
-
-
-?>
-
-
 <?php
 /* @var $this TeachersController */
 /* @var $dataProvider CActiveDataProvider */
@@ -45,7 +52,7 @@ $this->menu=array(
 ?>
 
 <h3 class="title_disigen">Teachers List</h3>
-  name: <?php echo $this->name(3); ?>
+  name: <?php echo $this->name(4); ?>
 
 <?php /* $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
@@ -66,3 +73,9 @@ $this->menu=array(
     </tr>  
   <?php endforeach;?>
 </table>
+<?php 
+ //echo"<pre>";
+//echo $model[0]->Firstname;
+ //echo exit();
+
+?>
