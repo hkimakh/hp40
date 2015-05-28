@@ -37,7 +37,11 @@ echo "</pre>";
   <?php endforeach;?>
 </table>
 
-  
+<?php 
+
+   $this->renderPartial('jquerytutorial');
+
+ ?>  
  
 
    
